@@ -1,0 +1,15 @@
+<form action = "/musics/new" method = "get">
+  <input type = "text" name = "keyword">
+  <input type = "submit" value = "検索" >
+</form>
+
+<% if !@musics.empty?%>
+  <% @musics.each do |music|%>
+  <form action = "/musics" method = "post">
+    <input type = "text" name = "name" value = "<%= music["artistName"]%>"readonly style = "border: none;">
+    <input type = "text" name = "img" value = "<%= music["collectionName"]%>"readonly style = "border: none;">
+    <input type = "text" name = "title" value = "<%= music["trackName"]%>"readonly style = "border: none;">
+    <input type = "submit" value = "保存"></input>
+  </form>
+  <% end %>
+<% end %>

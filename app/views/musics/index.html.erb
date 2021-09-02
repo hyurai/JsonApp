@@ -1,0 +1,6 @@
+<a href = "/musics/new">Musicを追加</a>
+<% @musics.each do |music|%>
+  <p><%= music.name%></p>
+  <p><%= music.title%></p>
+  <p><%= music.img%></p>
+<% end %>
